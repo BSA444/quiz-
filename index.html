@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Master</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-circle"></div>
+        <h2>QUIZ MASTER</h2>
+        <p>Loading your experience...</p>
+    </div>
+
+    <!-- Welcome Popup -->
+    <div id="welcome-popup" class="popup">
+        <div class="popup-content">
+            <h1>Welcome to Quiz Master</h1>
+            <p>Test your knowledge and improve your skills!</p>
+            <button id="enter-btn">Let's Start</button>
+        </div>
+    </div>
+
+    <!-- Main Home Section -->
+    <main id="home-section" class="container">
+
+        <header class="main-header">
+            <h1>QUIZ <span>MASTER</span></h1>
+            <p>Challenge Your Knowledge</p>
+        </header>
+
+        <!-- Quiz Selection -->
+        <section class="card">
+            <h2>Start Your Quiz</h2>
+
+            <label for="username">Enter Your Name</label>
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter your name"
+            >
+
+            <label for="category">Select Quiz Topic</label>
+            <select id="category">
+                <option value="">Select Topic</option>
+                <option value="gk">General Knowledge</option>
+                <option value="computer">Computer Knowledge</option>
+                <option value="javascript">JavaScript</option>
+                <option value="aptitude">Aptitude</option>
+            </select>
+
+            <button id="start-btn">Start Quiz</button>
+        </section>
+
+        <!-- Add New Questions -->
+        <section class="card">
+            <h2>Add New Questions</h2>
+            <p class="description">
+                Add unlimited questions to your selected topic.
+            </p>
+
+            <form id="question-form">
+
+                <label for="add-category">Select Topic</label>
+                <select id="add-category" required>
+                    <option value="">Select Topic</option>
+                    <option value="gk">General Knowledge</option>
+                    <option value="computer">Computer Knowledge</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="aptitude">Aptitude</option>
+                </select>
+
+                <label for="new-question">Enter Question</label>
+                <textarea
+                    id="new-question"
+                    placeholder="Enter your question here"
+                    required
+                ></textarea>
+
+                <label for="option1">Option 1</label>
+                <input
+                    type="text"
+                    id="option1"
+                    placeholder="Enter option 1"
+                    required
+                >
+
+                <label for="option2">Option 2</label>
+                <input
+                    type="text"
+                    id="option2"
+                    placeholder="Enter option 2"
+                    required
+                >
+
+                <label for="option3">Option 3</label>
+                <input
+                    type="text"
+                    id="option3"
+                    placeholder="Enter option 3"
+                    required
+                >
+
+                <label for="option4">Option 4</label>
+                <input
+                    type="text"
+                    id="option4"
+                    placeholder="Enter option 4"
+                    required
+                >
+
+                <label for="correct-answer">Correct Answer</label>
+                <select id="correct-answer" required>
+                    <option value="">Select Correct Option</option>
+                    <option value="0">Option 1</option>
+                    <option value="1">Option 2</option>
+                    <option value="2">Option 3</option>
+                    <option value="3">Option 4</option>
+                </select>
+
+                <button type="submit">Save Question</button>
+
+                <p id="save-status"></p>
+            </form>
+        </section>
+
+        <!-- Question Count -->
+        <section class="card">
+            <h2>Question Details</h2>
+            <p id="question-count">
+                Select a topic to view question count.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Quiz Section -->
+    <section id="quiz-section" class="container hidden">
+
+        <div class="card quiz-card">
+
+            <div class="quiz-top">
+                <h2>Quiz Time</h2>
+                <span id="timer">30</span>
+            </div>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <div class="question-info">
+                <p id="question-number">Question 1</p>
+            </div>
+
+            <h2 id="question-text">Question will appear here</h2>
+
+            <div id="options-container"></div>
+
+            <div class="quiz-buttons">
+                <button id="previous-btn">Previous</button>
+                <button id="next-btn">Next</button>
+                <button id="submit-btn">Submit Quiz</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Result Section -->
+    <section id="result-section" class="container hidden">
+
+        <div class="card result-card">
+
+            <h1>Quiz Completed!</h1>
+
+            <h2 id="result-name">Well Done!</h2>
+
+            <div class="result-box">
+                <p>Your Score</p>
+                <h1 id="score">0 / 0</h1>
+            </div>
+
+            <div class="result-box">
+                <p>Your Percentage</p>
+                <h1 id="percentage">0%</h1>
+            </div>
+
+            <h2>Answer Review</h2>
+
+            <div id="review-container"></div>
+
+            <button id="restart-btn">Back to Home</button>
+
+        </div>
+
+    </section>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+
+</body>
+</html>
